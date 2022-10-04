@@ -1,4 +1,5 @@
 const int motorPin = 3; 
+const int switch = 4;
 void setup() 
 { 
   pinMode(motorPin, OUTPUT);
@@ -7,5 +8,15 @@ void setup()
  
  
 void loop(){
-  analogWrite(motorPin, speed);
-} 
+if(sensor < 500) #sensor will be its own class that will be called
+{
+  if (digitalRead(switch)==LOW){ #if the switch isnt pressed run
+    analogWrite(motorPin, 10);
+    }
+  else{ # else move the motor so the switch isnt pressed anymore and turn off
+    analogWrite(motorPin,5);
+    delay(5);
+    analogWrite(motorPin,0)
+    }
+ }
+
