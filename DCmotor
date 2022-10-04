@@ -3,6 +3,8 @@ const int switch = 4;
 void setup() 
 { 
   pinMode(motorPin, OUTPUT);
+  pinMode(switch, OUTPUT);
+
   Serial.begin(9600);
  } 
  
